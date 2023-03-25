@@ -82,7 +82,7 @@ class VolatilLoteRepositoryTest {
     @DisplayName("Encontra lote armazenado no repositório")
     void encontraLoteEmRepository() {
         driver.save(lote);
-        assertEquals(lote.getId(), driver.find(lote.getId()));
+        assertEquals(lote, driver.find(lote.getId()));
     }
 
     @Test
@@ -145,13 +145,6 @@ class VolatilLoteRepositoryTest {
     @DisplayName("Deleta todos os lotes cadastrados")
     void deletaTodosLotesCadastrados() {
         driver.save(lote);
-        driver.deleteAll();
-        assertEquals(0, driver.findAll().size());
-    }
-
-    @Test
-    @DisplayName("Deleta todos os lotes em vazio")
-    void deletaTodosLotesEmVazio() {
         driver.deleteAll();
         assertEquals(0, driver.findAll().size());
     }
