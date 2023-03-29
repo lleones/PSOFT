@@ -1,7 +1,9 @@
 public class Produto {
     private String nome;
-    private String id;
+    private Long id;
     private String fabricante;
+    private double preco;
+    private String codigoBarra;
 
     public Produto(String nome, String id, String fabricante){
         this.nome = nome;
